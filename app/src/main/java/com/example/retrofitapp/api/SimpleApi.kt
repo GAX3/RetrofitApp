@@ -5,11 +5,19 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface SimpleApi {
+
+    //@Header custom dynamically es pasando la info de header como parametro
+
     //Simple Get
+    //@Header custom
+    @Headers(
+        "Authorization: 123123123",
+        "Platform: Android"
+    )
     @GET("posts/1/")
     suspend fun getPost(): Response<Post>
 
-    //Path Filto individual
+    //Path Filtro individual
     @GET("posts/{postNumber}/")
     suspend fun getPost2(
         @Path("postNumber") number: Int

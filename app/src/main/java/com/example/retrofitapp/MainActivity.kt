@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
                     Log.i("Response", response.body()?.id.toString())
                     Log.i("Response", response.body()?.title!!)
                     Log.i("Response", response.body()?.body!!)
+                    //Header
+                    Log.i("Response", response.headers().toString())
                     binding.tvHello.text = response.body()?.title
                 }else{
                     Log.i("Response", response.errorBody().toString())
